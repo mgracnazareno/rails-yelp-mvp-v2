@@ -1,0 +1,15 @@
+<%= <%= form_for @restaurant do |f| %>
+    <%= render 'layouts/error_messages', f: f.object %>
+       <%= f.label :name, "name" %> 
+       <%= f.text_field :name %>
+       <%= f.label :address, "address" %>
+       <%= f.text_field :address %>
+       <%= f.label :phone_number, "phone_number" %>
+       <%= f.text_field :phone_number %>
+       <%= f.label :category, "category" %>
+
+       <%= form.select :category, ["chinese", "italian", "japanese", "belgian"] %>
+    <!-- form_for @object, html: { multipart: true }, do |f| -->
+    <!-- form_for @object, html: { class: "classname" }, do |f| -->
+<% end %>
+   %>
