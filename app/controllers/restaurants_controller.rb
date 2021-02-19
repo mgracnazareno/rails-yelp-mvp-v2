@@ -4,6 +4,10 @@ class RestaurantsController < ApplicationController
        @restaurants = Restaurant.all
     end
 
+    def show 
+        @restaurant = Restaurant.find(params[:id])
+    end
+
     def new 
        @restaurant = Restaurant.new
     end
@@ -12,9 +16,16 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.new(restaurant_params)
         @restaurant.save
 
-        redirect_to restaurant_path(@restaurant)
+        if @restaurant.save 
+            redirect_to @restaurant            
+        else
+            render :new           
+        end
     end
 
+    # redirect_to restaurant_path(@restaurant)
+
+   
     private
 
     def restaurant_params

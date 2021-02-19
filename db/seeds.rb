@@ -9,8 +9,9 @@ puts 'cleaning the database...'
   Restaurant.destroy_all
 puts 'database is clean'
 
-puts 'creating restaurants'
+
 10.times do 
+  puts 'creating restaurants'
     restaurant = Restaurant.create(
         name: Faker::Restaurant.name,
         address: Faker::Address.street_address,

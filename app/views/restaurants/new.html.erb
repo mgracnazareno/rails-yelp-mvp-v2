@@ -1,5 +1,4 @@
-<%= form_for @restaurant do |f| %>
-    <%= render 'layouts/error_messages', f: f.object %>
+<%= simple_form_for @restaurant do |f| %>
        <%= f.label :name, "name" %> 
        <%= f.text_field :name %>
        <%= f.label :address, "address" %>
